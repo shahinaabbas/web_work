@@ -1,0 +1,228 @@
+
+# 1. What happens when you type `https://www.google.com` and press Enter
+1. Browser reads the URL.
+2. Browser checks its cache.
+3. DNS resolves `google.com` to an IP address.
+4. Laptop checks if the destination is in the same network.
+5. If not, it uses the default gateway (router).
+6. ARP finds the router's MAC address.
+7. TCP 3-way handshake establishes a reliable connection.
+8. TLS handshake creates a secure encrypted connection.
+9. Browser sends the HTTP request.
+10. Server sends the HTTP response.
+11. Browser renders the webpage.
+
+# 2. What is Browser Cache?
+
+A browser cache stores website files (HTML, CSS, JavaScript, images) locally to make websites load faster and reduce network traffic.
+
+# 3. What is DNS?
+
+DNS (Domain Name System) converts a domain name into an IP address.
+
+# 4. Why is DNS needed?
+
+Computers communicate using IP addresses, but humans remember domain names. DNS translates the domain name into an IP address.
+
+# 5. What is ARP?
+
+ARP (Address Resolution Protocol) finds the MAC address of a device using its IP address **within the local network (LAN)**.
+
+Example:
+
+```text
+Router IP
+192.168.1.1
+
+↓
+
+Router MAC
+AA:AA:AA:AA:AA:AA
+```
+
+---
+
+# 6. Why does the laptop use the router's MAC instead of Google's MAC?
+
+Google is on another network.
+
+ARP works only inside the local network.
+
+Therefore, the laptop sends the frame to the **router's MAC**, while the IP destination remains Google's IP.
+
+---
+
+# 7. What is TCP?
+
+TCP (Transmission Control Protocol) provides reliable communication by ensuring data is delivered correctly and in order.
+
+---
+
+# 8. Why is the TCP 3-Way Handshake needed?
+
+To establish a reliable connection between the client and the server before sending data.
+
+---
+
+# 9. Explain the TCP 3-Way Handshake.
+
+1. **SYN** → Client requests a connection.
+2. **SYN + ACK** → Server accepts and acknowledges.
+3. **ACK** → Client confirms.
+
+Connection established.
+
+---
+
+# 10. What is TLS?
+
+TLS (Transport Layer Security) creates a secure and encrypted connection between the client and the server.
+
+---
+
+# 11. Why is TLS needed?
+
+TCP is reliable but does not encrypt data.
+
+TLS protects data such as:
+
+* Passwords
+* Banking details
+* Personal information
+
+---
+
+# 12. What happens during the TLS Handshake?
+
+1. ClientHello
+2. ServerHello
+3. Server sends Digital Certificate
+4. Browser verifies the certificate
+5. Browser creates a Session Key
+6. Browser encrypts the Session Key using the server's Public Key
+7. Server decrypts it using its Private Key
+8. Secure connection established
+
+---
+
+# 13. What is a Session Key?
+
+A Session Key is a temporary secret key created during the TLS handshake. It is used to encrypt and decrypt all data exchanged during that session.
+
+---
+
+# 14. Why use a Session Key instead of the Public Key?
+
+Public key encryption is computationally slower.
+
+The public key is used only to securely exchange the session key.
+
+The session key is then used because it is much faster for encrypting all subsequent communication.
+
+---
+
+# 15. What is HTTP?
+
+HTTP (HyperText Transfer Protocol) is used by browsers and web servers to request and deliver web pages.
+
+---
+
+# 16. What is an HTTP Request?
+
+The browser asks the server for a resource.
+
+Example:
+
+```http
+GET / HTTP/1.1
+Host: google.com
+```
+
+---
+
+# 17. What is an HTTP Response?
+
+The server replies with:
+
+* HTML
+* CSS
+* JavaScript
+* Images
+
+along with an HTTP status code (for example, `200 OK`).
+
+---
+
+# 18. Which protocol uses which port?
+
+| Protocol |  Port |
+| -------- | ----: |
+| HTTP     |    80 |
+| HTTPS    |   443 |
+| DNS      |    53 |
+| DHCP     | 67/68 |
+| SSH      |    22 |
+| FTP      |    21 |
+
+---
+
+# 19. Which protocols use TCP and UDP?
+
+| Protocol | Transport Protocol          |
+| -------- | --------------------------- |
+| HTTP     | TCP                         |
+| HTTPS    | TCP                         |
+| TLS      | TCP                         |
+| DNS      | Usually UDP (sometimes TCP) |
+| DHCP     | UDP                         |
+
+---
+
+# 20. OSI Layer Mapping
+
+| OSI Layer   | Protocol/Technology        |
+| ----------- | -------------------------- |
+| Application | HTTP, HTTPS, DNS, TLS      |
+| Transport   | TCP, UDP                   |
+| Network     | IP                         |
+| Data Link   | Ethernet, MAC, ARP         |
+| Physical    | Bits, Cable, Wi-Fi Signals |
+
+---
+
+# 21. Complete Web Flow
+
+```text
+User types google.com
+        │
+Browser Cache
+        │
+DNS Resolution
+        │
+Google IP Found
+        │
+Subnet Check
+        │
+ARP (Router MAC Found)
+        │
+TCP 3-Way Handshake
+        │
+TLS Handshake
+        │
+HTTP Request
+        │
+HTTP Response
+        │
+Browser Renders HTML/CSS/JS
+        │
+Google Homepage Displayed
+```
+
+---
+
+# 22. One-Line Interview Summary
+
+> **When a user enters a website URL, the browser checks its cache, resolves the domain name using DNS, establishes a reliable TCP connection, secures it with TLS,
+sends an HTTP request, receives the HTTP response, and finally renders the webpage for the user.**
+
+
