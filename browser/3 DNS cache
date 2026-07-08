@@ -1,0 +1,13 @@
+dns =domain name -> ip address
+domain cache 4 level
+     Level 1: Browser DNS Cache
+Chrome has its own DNS cache.(RECENTLY VISITED)
+      Operating System DNS Cache
+       Level 3: Router DNS Cache (home network check)
+       Level 4: ISP DNS Cache -> internet dns server
+TTL  =Time To Live  cache expired
+
+
+What is DNS Cache?
+
+A DNS cache is a temporary storage that keeps recently resolved domain names and their IP addrs

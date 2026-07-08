@@ -1,0 +1,127 @@
+ tcp = transmission control protocol 
+ extablish a  reliable connection between client and server before actual data 
+transfer 
+it ensure
+  both client and server ready to communicate
+   3 steps
+1 syn packet port 443 transport layer
+ip layer network layer
+destination ip adress =google ip
+source ip=lap
+data link layer
+ destination mac address router= found
+ source= laptop
+ lap-> frames -> bits->switch ->(mac)router destination ip=google ->google server
+ google= syn+ack
+ laptop -> ack
+
+
+                     TCP 3-Way Handshake Flow
+
+Current Status
+──────────────────────────────────────────────
+✓ Google IP Address Known
+✓ Router MAC Address Known
+──────────────────────────────────────────────
+
+                │
+                ▼
+Chrome wants to open google.com
+                │
+                ▼
+TCP starts
+                │
+                ▼
+Create SYN Segment
+──────────────────────────────────────────────
+Flag            : SYN
+Source Port     : 52341
+Destination Port: 443 (HTTPS)
+──────────────────────────────────────────────
+                │
+                ▼
+IP Layer Adds Header
+──────────────────────────────────────────────
+Source IP      : 192.168.1.10
+Destination IP : 142.250.190.78
+──────────────────────────────────────────────
+                │
+                ▼
+Ethernet Layer Adds Header
+──────────────────────────────────────────────
+Source MAC      : Laptop MAC
+Destination MAC : Router MAC
+──────────────────────────────────────────────
+                │
+                ▼
+Physical Layer
+Converts to Bits
+                │
+                ▼
+Laptop
+                │
+                ▼
+Switch
+                │
+                ▼
+Router
+(Removes Ethernet Frame)
+                │
+Reads Destination IP
+142.250.190.78
+                │
+                ▼
+Creates New Ethernet Frame
+                │
+                ▼
+ISP Router
+                │
+                ▼
+Internet Routers
+                │
+                ▼
+Google Server
+                │
+Receives SYN
+                │
+                ▼
+Google replies
+──────────────────────────────────────────────
+SYN + ACK
+"I received your request."
+──────────────────────────────────────────────
+                │
+                ▼
+Travels Back
+Internet
+      │
+ISP
+      │
+Router
+      │
+Switch
+      │
+Laptop
+                │
+                ▼
+Laptop Receives SYN-ACK
+                │
+                ▼
+Laptop Sends ACK
+──────────────────────────────────────────────
+ACK
+"Connection Established"
+──────────────────────────────────────────────
+                │
+                ▼
+TCP Connection Successfully Established
+                │
+                ▼
+Next Step
+TLS Handshake (HTTPS)
+                │
+                ▼
+HTTP Request
+                │
+                ▼
+Google Response

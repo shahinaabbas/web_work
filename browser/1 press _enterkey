@@ -1,0 +1,32 @@
+You Press Enter
+       │
+       ▼
+Keyboard Detects Key (clm y and row x)
+       │
+       ▼
+Keyboard Sends Scan Code
+       │
+       ▼
+CPU Receives Interrupt
+       │
+       ▼
+Operating System
+       │
+       ▼
+Chrome Receives Enter
+       │
+       ▼
+Chrome Reads URL
+       │
+       ▼
+Chrome Checks Browser Cache
+       │
+       ▼
+Need Network?
+
+
+      Why is Cache Used?
+Faster page loading
+Less Internet usage
+Reduced server load
+Better user experience

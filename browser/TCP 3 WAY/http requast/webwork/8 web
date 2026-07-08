@@ -1,0 +1,21 @@
+1. Press Enter
+        │
+2. Browser Cache
+        │
+3. DNS Resolution
+        │
+4. Google IP Found
+        │
+5. ARP (Router MAC Found)
+        │
+6. TCP 3-Way Handshake
+        │
+7. TLS Handshake
+        │
+8. HTTP Request
+        │
+9. HTTP Response
+        │
+10. Browser Renders HTML
+        │
+11. Google Homepage Appears

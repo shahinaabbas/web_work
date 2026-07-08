@@ -1,0 +1,87 @@
+DNS is a huge distributed system with thousands of DNS servers
+
+You
+ │
+ ▼
+Browser
+ │
+ ▼
+Browser Cache
+ │
+ ▼
+Operating System Cache
+ │
+ ▼
+Router Cache
+ │
+ ▼
+ISP DNS Server =
+ │
+ ▼
+Root DNS Server= direction to .com server which TLD server to ask next.
+ │
+ ▼
+TLD DNS Server (.com) top leve domain server
+ │
+ ▼
+Authoritative DNS Server = real ip address
+ │
+ ▼
+Google IP Address -> isp -> laptop
+
+
+A RECORD = domain name to ipv4
+AAAA=DNAME TO ipv6
+CNAME canonical name= POIN TO anothr namr (eg wwww.abc.com,shop.abc.com-> abc.com)
+MX RECORD =gmail ->mail server
+txt record =verification
+ns =which dns server mansge the domain
+
+
+port 53 mostly udp
+
+
+AFTER GETTING IP 
+      when a device on network that is lan 
+      DHCP gives devices ip,subnet mask,network address,router ip(defualt gateway)
+ 2 the device compare the ip
+     same network id =lan 
+     not =need a network
+ 3  lan want to communicate with route want to know the MAC addrs
+    switch arp requat now get the mac address
+
+|
+|
+router  
+
+Press Enter
+      │
+Chrome
+      │
+Browser Cache
+      │
+DNS      = dns resalution :::udp-ip -frames-bit 
+            browser dns cache
+            os"
+            router"
+            isp"
+            root dns
+            tld dns server
+            authoritative dns
+  by dhcp we got dsp ip dont match the network ip so-> route ip adress known by dhcp
+  get route mac by arp ->isp ip -> internet->dns ip match          
+      │
+Google IP Found
+      │
+Subnet Mask Check
+      │
+Router Selected
+      │
+ARP
+      │
+Router MAC Found
+      │
+Frame Created  = destination mac (router) packet destination ip Google
+
+      │
+tcp 3 way hanshake

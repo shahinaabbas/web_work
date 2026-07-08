@@ -1,0 +1,31 @@
+What is Browser Cache?
+
+A Browser Cache is a storage area where Chrome saves copies website files 
+dont need to dwld again
+
+cache stored 1 ram
+               temporrly storage itbwill gone after restart the cmptr
+               fast.store recently used files
+               2 SSD/HARD DISK
+                longer available
+reviste=Local storage is much faster than downloading from the Internet
+find on cache =CACHE HIT
+not found=CACHE MISS-> NETWORK CONNCTN Need
+CACHE CONTROL= SET Time period on cache
+
+Press Enter
+      │
+      ▼
+Chrome Reads URL
+      │
+      ▼
+Check Browser Cache
+      │
+      ├───────────────┐
+      │               │
+      ▼               ▼
+Cache Hit       Cache Miss
+      │               │
+      ▼               ▼
+Use Local      Go to DNS
+Files

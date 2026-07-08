@@ -1,0 +1,82 @@
+HTTP= hypertext transfer protocol
+is used to browser and web server to extange the web pages
+
+step1 
+    browser createw http requast
+    [GET/ HTTP/1.1
+    HOST : GOOGLE]
+    GET = RETRIVE
+    /=HOME page
+ STEP 2 
+     HTTP MESSEGE
+      GET/ HTTP/1.1
+    HOST : GOOGLE
+    USER AGENT=Chrome
+ step3 
+      OSI encapsulation
+      application=http
+      transport=tcp
+      network =1p
+      data=framespysical=bit
+
+     lap-awitch-route-isp-internet-google server
+ step4
+    google
+          recieve the req and processs the req
+          process= html css javascript images
+step5
+    google
+          create http responce
+step 6
+   browser recive the responce
+
+
+
+
+
+    TLS Connection Established
+        │
+        ▼
+Browser Creates HTTP GET Request
+        │
+        ▼
+TCP
+        │
+        ▼
+IP
+        │
+        ▼
+Ethernet
+        │
+        ▼
+Bits
+        │
+        ▼
+Switch
+        │
+        ▼
+Router
+        │
+        ▼
+Internet
+        │
+        ▼
+Google Server
+        │
+        ▼
+Google Processes Request
+        │
+        ▼
+HTTP Response
+        │
+        ▼
+Encrypted by TLS
+        │
+        ▼
+Internet
+        │
+        ▼
+Browser
+        │
+        ▼
+Displays Google Homepage                         

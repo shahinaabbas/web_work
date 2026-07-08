@@ -1,0 +1,99 @@
+TLS=transport layes security
+it prepare a secure communication channel
+it work between application and transport layer
+ it encrypt the data
+ verify server identity
+ protecting data from modification during transmission
+ create shared session Key
+step 1 
+  clienthello
+  chrome Sends
+              tls version
+              supported encryption algorithm(cipher suites)
+              random numbers
+    os layer 
+            application=tls
+            transport=tcp
+            network=ip
+            data=frames
+            physical =bit
+    switch router internet google
+step 2
+    serverhello
+    google choose
+                 tls version
+                 encrypted algorithm
+    google send 
+               digital certificate
+               owner
+               trusted certificate authoritative(ca)
+               issued
+               public Key
+step 3
+     browser verify the certificate
+step 4
+    browser
+           creatw session Key
+step 5
+    browser encrypt the session Key using google public Key
+    (so now only google can decrypt using its PRIVATE KEY) 
+step 6
+     google decrpt the session Key
+
+     so bothb side have same key that us session key
+stepb 7 
+    tls is closed                       
+     
+
+
+
+     TCP Connection Established
+        │
+        ▼
+ClientHello
+(Browser)
+        │
+        ▼
+ServerHello
+(Google)
+        │
+        ▼
+Google Sends Certificate
+        │
+        ▼
+Browser Verifies Certificate
+        │
+        ▼
+Certificate Valid?
+        │
+   ┌────┴─────┐
+   │          │
+  Yes         No
+   │          │
+   ▼          ▼
+Create      Browser Warning
+Session Key
+   │
+   ▼
+Encrypt Session Key
+Using Google's Public Key
+   │
+   ▼
+Google Decrypts
+Using Private Key
+   │
+   ▼
+Both Have Same Session Key = is temporarly create key it provide
+                           fast and secure than public key
+   │
+   ▼
+TLS Connection Established
+   │
+   ▼
+Encrypted HTTP Request
+   │
+   ▼
+Encrypted HTTP Response
+   │
+   ▼
+Browser Displays Google
